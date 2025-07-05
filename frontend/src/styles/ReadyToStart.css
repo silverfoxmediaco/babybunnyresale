@@ -1,0 +1,105 @@
+/* File: frontend/src/styles/ReadyToStart.css */
+
+/* CTA Section */
+.ready-to-start-section {
+    background: linear-gradient(135deg, #F27026 0%, #39C3C9 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ready-to-start-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -25%;
+    width: 150%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate-slow 30s linear infinite;
+  }
+  
+  @keyframes rotate-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .ready-to-start-title {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .ready-to-start-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+  }
+  
+  .ready-to-start-button {
+    background: white;
+    color: #F27026;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 48px;
+    border-radius: 30px;
+    text-transform: none;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ready-to-start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    background: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .ready-to-start-section {
+      padding: 60px 0;
+    }
+  
+    .ready-to-start-title {
+      font-size: 2.25rem;
+    }
+  
+    .ready-to-start-subtitle {
+      font-size: 1.25rem;
+      padding: 0 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .ready-to-start-section {
+      padding: 40px 0;
+    }
+  
+    .ready-to-start-title {
+      font-size: 2rem;
+      padding: 0 20px;
+    }
+  
+    .ready-to-start-subtitle {
+      font-size: 1.1rem;
+      padding: 0 20px;
+      margin-bottom: 24px;
+    }
+  
+    .ready-to-start-button {
+      font-size: 16px;
+      padding: 14px 32px;
+    }
+  }

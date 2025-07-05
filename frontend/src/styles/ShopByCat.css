@@ -1,0 +1,129 @@
+/* File: frontend/src/styles/ShopByCat.css */
+
+/* Categories Section */
+.home-categories-section {
+    padding: 80px 0;
+    background-color: white;
+  }
+  
+  .home-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #3A3A3A;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .home-section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 18px !important;
+    margin-bottom: 48px;
+    margin-top: 10px !important;
+  }
+  
+  .home-category-card {
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    background: white;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-category-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(57, 195, 201, 0.05) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .home-category-card:hover::before {
+    transform: scale(1);
+  }
+  
+  .home-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #39C3C9;
+  }
+  
+  .home-category-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .home-category-card:hover .home-category-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  .home-category-name {
+    font-weight: 600;
+    color: #3A3A3A;
+    margin-bottom: 4px;
+  }
+  
+  .home-category-count {
+    color: #999;
+    font-size: 12px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .home-categories-section {
+      padding: 60px 0;
+    }
+  
+    .home-section-title {
+      font-size: 2rem;
+    }
+  
+    .home-category-card {
+      padding: 20px;
+      min-height: 140px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .home-categories-section {
+      padding: 40px 0;
+    }
+  
+    .home-section-title {
+      font-size: 1.75rem;
+    }
+  
+    .home-section-subtitle {
+      font-size: 16px !important;
+      margin-bottom: 32px;
+    }
+  
+    .home-category-card {
+      padding: 16px;
+      min-height: 120px;
+    }
+  
+    .home-category-icon {
+      font-size: 36px;
+    }
+  
+    .home-category-name {
+      font-size: 14px;
+    }
+  }

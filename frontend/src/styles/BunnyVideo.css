@@ -1,0 +1,316 @@
+/* File: frontend/src/styles/BunnyVideo.css */
+
+/* Video Section */
+.bunny-video-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #FFF5F0 0%, #E8F5F8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bunny-video-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(242, 112, 38, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-bubble 20s ease-in-out infinite;
+  }
+  
+  .bunny-video-section::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(57, 195, 201, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-bubble 25s ease-in-out infinite reverse;
+  }
+  
+  @keyframes float-bubble {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+  
+  /* Container */
+  .bunny-video-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Title */
+  .bunny-video-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #3A3A3A;
+    text-align: center;
+    margin-bottom: 12px !important;
+  }
+  
+  .bunny-video-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px !important;
+  }
+  
+  /* Video Wrapper */
+  .bunny-video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    background: #000;
+    margin-bottom: 48px;
+    transition: transform 0.3s ease;
+  }
+  
+  .bunny-video-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Video */
+  .bunny-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+  }
+  
+  /* Play Overlay */
+  .bunny-video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .bunny-video-play-overlay:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .bunny-video-play-button {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #F27026 0%, #F3B796 100%);
+    color: white;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+  }
+  
+  .bunny-video-play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(242, 112, 38, 0.4);
+  }
+  
+  .bunny-video-play-button svg {
+    font-size: 40px;
+  }
+  
+  .bunny-video-replay-text {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Video Controls */
+  .bunny-video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+    padding: 20px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .bunny-video-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .bunny-video-progress .MuiLinearProgress-bar {
+    background: linear-gradient(90deg, #F27026 0%, #39C3C9 100%);
+  }
+  
+  .bunny-video-controls-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .bunny-video-controls-left,
+  .bunny-video-controls-right {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .bunny-video-control-button {
+    color: white;
+    transition: all 0.2s ease;
+  }
+  
+  .bunny-video-control-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+  
+  /* Decorative Elements */
+  .bunny-video-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .bunny-video-decoration-1 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #F27026 0%, #F3B796 100%);
+    top: -20px;
+    left: -20px;
+    animation: rotate-decoration 10s linear infinite;
+  }
+  
+  .bunny-video-decoration-2 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #39C3C9 0%, #4DD4DA 100%);
+    bottom: -15px;
+    right: -15px;
+    animation: rotate-decoration 8s linear infinite reverse;
+  }
+  
+  @keyframes rotate-decoration {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Features */
+  .bunny-video-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .bunny-video-feature {
+    text-align: center;
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .bunny-video-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .bunny-video-feature h6 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .bunny-video-feature p {
+    color: #666;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .bunny-video-section {
+      padding: 60px 0;
+    }
+  
+    .bunny-video-title {
+      font-size: 2rem;
+    }
+  
+    .bunny-video-features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .bunny-video-section {
+      padding: 40px 0;
+    }
+  
+    .bunny-video-title {
+      font-size: 1.75rem;
+      margin-bottom: 20px !important;
+    }
+  
+    .bunny-video-subtitle {
+      font-size: 16px;
+      margin-bottom: 32px !important;
+    }
+  
+    .bunny-video-wrapper {
+      border-radius: 16px;
+      margin-bottom: 32px;
+    }
+  
+    .bunny-video-play-button {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .bunny-video-play-button svg {
+      font-size: 30px;
+    }
+  
+    .bunny-video-features {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  
+    .bunny-video-feature {
+      padding: 16px;
+    }
+  
+    .bunny-video-feature h6 {
+      font-size: 24px;
+    }
+  
+    .bunny-video-controls {
+      padding: 12px;
+    }
+  }

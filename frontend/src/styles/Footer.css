@@ -1,0 +1,408 @@
+/* File: frontend/src/styles/Footer.css */
+
+/* Footer Container */
+.footer-container {
+  background-color: #f8f9fa;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Features Bar */
+.footer-features {
+  background: linear-gradient(135deg, #F27026 0%, #F3B796 100%);
+  padding: 24px 0;
+  color: white;
+}
+
+/* Features Grid Container - Add centering */
+.footer-features .MuiContainer-root {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-features .MuiGrid-container {
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.footer-features .MuiGrid-item {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+  min-width: 160px;
+  padding: 8px;
+}
+
+.footer-feature-item:hover {
+  transform: translateY(-3px);
+}
+
+.footer-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.footer-feature-item:hover .footer-feature-icon {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(10deg);
+}
+
+.footer-feature-icon svg {
+  font-size: 20px;
+}
+
+.footer-feature-text {
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Social Links Section */
+.footer-social-section {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social-icon {
+  width: 44px;
+  height: 44px;
+  background: white;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.footer-social-icon:hover {
+  background: #F27026;
+  color: white;
+  border-color: #F27026;
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(242, 112, 38, 0.3);
+}
+
+.footer-social-icon svg {
+  font-size: 22px;
+}
+
+/* Divider */
+.footer-divider {
+  margin: 0 auto;
+  max-width: 1200px;
+  border-color: #e0e0e0;
+}
+
+/* Bottom Section - Centered */
+.footer-bottom {
+  padding: 40px 0 24px;
+  background-color: #f8f9fa;
+}
+
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-bottom-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-copyright {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-link {
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.footer-legal-link:hover {
+  color: #F27026;
+}
+
+.footer-legal-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #F27026;
+  transition: width 0.3s ease;
+}
+
+.footer-legal-link:hover::after {
+  width: 100%;
+}
+
+.footer-separator {
+  color: #ddd;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Contact Info */
+.footer-contact-info {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-contact-chip {
+  background: white;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 24px;
+  font-weight: 500;
+}
+
+.footer-contact-chip:hover {
+  background: linear-gradient(135deg, #F27026 0%, #F3B796 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(242, 112, 38, 0.3);
+}
+
+.footer-contact-chip .MuiChip-icon {
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.footer-contact-chip:hover .MuiChip-icon {
+  transform: rotate(-10deg);
+}
+
+/* Made with Love */
+.footer-made-with-love {
+  text-align: center;
+  padding: 20px 0;
+  color: #999;
+  font-size: 13px;
+  background-color: #f8f9fa;
+}
+
+.footer-heart-icon {
+  font-size: 16px;
+  color: #EE5C4D;
+  vertical-align: middle;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  margin: 0 4px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-bottom {
+    padding: 24px 16px;
+  }
+
+  .footer-bottom-content {
+    gap: 20px;
+  }
+
+  .footer-legal-links {
+    gap: 12px;
+  }
+
+  .footer-contact-info {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-contact-chip {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.2);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* Background Decoration */
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(244, 199, 217, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.footer-container::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(182, 227, 242, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .footer-bottom {
+    padding: 30px 0 20px;
+  }
+
+  .footer-bottom-right {
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+
+  .footer-social-section {
+    padding: 24px 0;
+  }
+  
+  /* Center features on tablet */
+  .footer-features .MuiGrid-container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-features {
+    padding: 16px 0;
+  }
+  
+  /* Features centered in mobile */
+  .footer-features .MuiGrid-container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  
+  .footer-features .MuiGrid-item {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .footer-feature-item {
+    flex-direction: column;
+    gap: 8px;
+    min-width: unset;
+    padding: 8px 4px;
+  }
+
+  .footer-feature-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-feature-text {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer-social-section {
+    padding: 20px 0;
+  }
+
+  .footer-social-links {
+    gap: 8px;
+  }
+
+  .footer-social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-bottom {
+    padding: 24px 0 16px;
+    text-align: center;
+  }
+
+  .footer-bottom-left {
+    align-items: center;
+  }
+
+  .footer-contact-info {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-contact-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  .footer-made-with-love {
+    padding: 16px 0;
+    font-size: 12px;
+  }
+}
