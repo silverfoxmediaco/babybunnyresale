@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Baby Bunny Resale - Full Stack Application",
   "scripts": {
-  "build": "cd frontend && echo \"🛠 Running frontend build...\" && npm install && npx vite build"
+  "build": "cd frontend && echo \"🛠 Running frontend build...\" && npm install && npx vite build",
+  "start": "node backend/server.js"
 },
 
   "devDependencies": {
