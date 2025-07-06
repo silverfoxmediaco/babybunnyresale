@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -47,17 +48,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/babybunnyresale', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch((err) => console.error('MongoDB connection error:', err));
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected successfully'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
-// Routes
+// Health check route
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
+  res.json({
+    status: 'OK',
     message: 'Baby Bunny Resale API is running!',
     timestamp: new Date().toISOString()
   });
@@ -70,26 +68,30 @@ app.use('/api/bids', bidRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/users', userRoutes);
 
+// Serve frontend static files (Vite build)
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Fallback: serve index.html for unknown frontend routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
 // Socket.io for real-time auction updates
 io.on('connection', (socket) => {
   console.log('New client connected:', socket.id);
-  
-  // Join auction room
+
   socket.on('join_auction', (auctionId) => {
     socket.join(`auction_${auctionId}`);
     console.log(`Socket ${socket.id} joined auction ${auctionId}`);
   });
 
-  // Leave auction room
   socket.on('leave_auction', (auctionId) => {
     socket.leave(`auction_${auctionId}`);
     console.log(`Socket ${socket.id} left auction ${auctionId}`);
   });
 
-  // Handle bidding through socket (alternative to REST)
   socket.on('place_bid', async (data) => {
     try {
-      // Emit to all users in the auction room
       io.to(`auction_${data.auctionId}`).emit('new_bid', {
         auctionId: data.auctionId,
         amount: data.amount,
@@ -106,10 +108,10 @@ io.on('connection', (socket) => {
   });
 });
 
-// 404 handler (must be after all routes)
+// 404 handler (after all routes)
 app.use(notFound);
 
-// Error handling middleware (must be last)
+// Global error handler (last middleware)
 app.use(errorHandler);
 
 // Start server
